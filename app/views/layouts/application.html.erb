@@ -13,6 +13,11 @@
   <body>
     <div class="ui container">
       <%= render 'layouts/navigation' %>
+      <% if flash.any? %>
+        <% flash.each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
       <%= yield %>
     </div>
   </body>
