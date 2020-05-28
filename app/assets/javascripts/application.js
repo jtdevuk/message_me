@@ -24,8 +24,16 @@ scroll_bottom = function() {
 }
 
 submit_message = function() {
-  $('#message_body')
+  $('#message_body').on('keydown', function(e) {
+    if (e.keycode == 13) {
+      $('button').click();
+    }
+  })
 }
+
+$(document).bind("ajax:beforeSend", function(){
+    $('#message_body').val('');
+});
 
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
@@ -36,5 +44,6 @@ $(document).on('turbolinks:load', function() {
         .closest('.message')
         .transition('fade');
     });
-    scroll_bottom()
+    submit_message();
+    scroll_bottom();
 })
