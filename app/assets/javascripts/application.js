@@ -23,6 +23,10 @@ scroll_bottom = function() {
   }
 }
 
+submit_message = function() {
+  $('#message_body')
+}
+
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
 
