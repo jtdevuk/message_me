@@ -37,6 +37,7 @@ $(document).bind("ajax:beforeSend", function(){
 
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
+  $("#message").fadeOut(3000);
 
   $('.message .close')
     .on('click', function() {
